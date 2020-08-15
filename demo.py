@@ -1,8 +1,14 @@
-for i in range(4):
-    for j in range(4):
-        if i==0 or i==3 or j==0 or j==3:
-            print("*",end=" ")
-        else:
-            print(" ",end=" ")
-            
-    print()
+n = int(input())
+arr = list(map(int,input().split()))
+
+
+def migratoryBirds(arr):
+    freq_dict = Counter(arr)
+    maxx=max(freq_dict.values())
+    def get_key(val):
+        for key,value in freq_dict.items():
+            if val==value:
+                return key
+
+    return get_key(maxx)
+migratoryBirds(arr)
