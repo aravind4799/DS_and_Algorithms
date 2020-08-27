@@ -42,59 +42,47 @@ for node in adj_dict:
     visited[node]=False
 
 # using stack dfs search
-# def dfs(adj_dict,start):
-#     if start not in adj_dict:
-#         return -1
-#     stack,path=[start],[]
-#     while stack:
-#         vertex=stack.pop()
-#         if vertex in path:
-#             continue
-#         path.append(vertex)
-#         for n in adj_dict[vertex]:
-#             stack.append(n)
-#     return path
+def dfs(adj_dict,start):
+    if start not in adj_dict:
+        return -1
+    stack,path=[start],[]
+    while stack:
+        vertex=stack.pop()
+        if vertex in path:
+            continue
+        path.append(vertex)
+        for n in adj_dict[vertex]:
+            stack.append(n)
+    return path
 
 # using recursion
-# def dfs(adj_dict,start,path=[]):
-#     if start not in adj_dict:
-#         return -1
-#     path+=[start]
-#     for n in adj_dict[start]:
-#         if n not in path:
-#             path=dfs(adj_dict,n,path)
-#     return path
+def dfs(adj_dict,start,path=[]):
+    if start not in adj_dict:
+        return -1
+    path+=[start]
+    for n in adj_dict[start]:
+        if n not in path:
+            path=dfs(adj_dict,n,path)
+    return path
+
+
 
 #bfs search
 
-from queue import Queue
-
-# def bfs(adj_dict,start):
+# from queue import Queue
+# def bfs(adj,start):
 #     q=Queue()
 #     path=[]
 #     q.put(start)
+#     visited[start]=True
 #     while not q.empty():
 #         v = q.get()
-#         visited[v]=True
 #         path.append(v)
-#         for n in adj_dict[v]:
+#         for n in adj[v]:
 #             if not visited[n]:
-#                 q.put(n)           
+#                 visited[n]=True
+#                 q.put(n)
 #     return path
-
-def bfs(adj,start):
-    q=Queue()
-    path=[]
-    q.put(start)
-    visited[start]=True
-    while not q.empty():
-        v = q.get()
-        path.append(v)
-        for n in adj[v]:
-            if not visited[n]:
-                visited[n]=True
-                q.put(n)
-    return path
 
 
 
