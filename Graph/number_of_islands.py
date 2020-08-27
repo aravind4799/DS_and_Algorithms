@@ -1,20 +1,13 @@
 
-
-
-
 grid=[
   ["1","1","0","0","0"],
   ["1","1","0","0","0"],
   ["0","0","1","0","0"],
   ["0","0","0","1","1"]
 ]
-
 for i in range(len(grid)):
     for j in range(len(grid[i])):
         grid[i][j]=int(grid[i][j])
-
-
-
 
 def valid(grid,x,y):
     if 0<= x <len(grid) and 0<= y <len(grid[0]) and grid[x][y]!=0:
