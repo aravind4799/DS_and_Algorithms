@@ -1,3 +1,6 @@
+
+#right side larger value than root
+#left side lesser value than root
 class node:
     def __init__(self,val):
         self.l=None

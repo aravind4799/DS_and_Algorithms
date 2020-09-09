@@ -46,6 +46,6 @@ def seive(x,y):
     end=time()
     return ans,end-start
 
-ans,time=seive(10,200000)
+ans,time=seive(1,100)
 print(ans)
 print(time)

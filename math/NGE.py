@@ -27,7 +27,7 @@ def printarr(arr):
     for i in range(1,len(arr)):
         nextt=arr[i]
 
-        if(!isempty(stack)):
+        if(not isempty(stack)):
             ele=stack.pop()
 
             while(ele<nextt):
